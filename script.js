@@ -58,8 +58,8 @@ function getLocationText() {
 function getTimeText() {
   let d = new Date($("#date").value || Date.now());
   let datestr = d.toLocaleString('en-us', {weekday: 'short'}) + " " + d.getDate() +
-      nth(d.getDate()) + " of " + d.toLocaleString('en-us', {month:'short'})
-  return datestr + " @ " + $("#time").value || "09:00";
+      nth(d.getDate()) + " of " + d.toLocaleString('en-us', {month: 'short'})
+  return datestr + " @" + ($("#time").value || "09:00");
 }
 
 function update() {
@@ -91,8 +91,7 @@ autocomplete({
     update(results);
   },
   onSelect: function(item) {
-    mymap.setView([item.value.lat, item.value.lon], 18)
-    console.log("selected item", item);
+    mymap.setView([item.value.lat, item.value.lon], 18);
   }
 });
 
@@ -107,6 +106,11 @@ $("#download").addEventListener("click", evt => {
   $("#search").style.visibility = "hidden";
 
   domtoimage.toPng($("#map-wrapper")).then(dataUrl => {
+    // For debugging
+    //var img = new Image();
+    //img.src = dataUrl;
+    //document.body.appendChild(img);
+
     var link = document.createElement('a');
     link.download = 'glasgow-cleanup-map.png';
     link.href = dataUrl;
