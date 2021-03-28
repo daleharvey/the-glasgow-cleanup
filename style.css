@@ -1,6 +1,6 @@
 /* CSS files add styling rules to your content */
 
-* { 
+* {
   border: 0;
   margin: 0;
   padding: 0;
@@ -8,29 +8,77 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 2em;
+  margin: 2em auto;
+  width: 590px;
 }
 
 h1 {
 
 }
 
-p { 
+p {
   margin: 1em 0;
 }
 
-#map-wrapper { 
+#map-wrapper, #mapid {
   width: 590px;
   height: 590px;
+  position: relative;
 }
 
-#map { 
-  width: 100%;
-  height: 100%;
+#map {
+  width: 590px;
+  height: 590px;
+  z-index: 50;
+  position:absolute;
 }
 
-input { 
+input {
   border: 1px solid #666;
   padding: .5em;
-  margin: 1em;
+  margin-right: 1em;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+#pointer {
+  top: 150px;
+  left: 150px;
+  background: url("./pointer.svg");
+  background-size: 100%;
+  width: 32px;
+  height: 44px;
+}
+
+#pointer, #location-output, #time-output {
+  position: absolute;
+  z-index: 99;
+}
+
+#location-output, #time-output {
+  background: #000;
+  font-size: 46px;
+  color: #FFF;
+  padding: 5px;
+}
+
+#location-output {
+  bottom: 20px;
+  right: 20px;
+}
+
+#time-output {
+  bottom: 100px;
+  right: 20px;
+}
+
+#download {
+  background: #666;
+  color: #FFF;
+  padding: .5em;
+  font-weight: bold;
 }

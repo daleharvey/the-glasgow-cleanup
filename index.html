@@ -5,36 +5,50 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="/style.css">    
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
     <script src="/script.js" defer></script>
-  </head>  
+  </head>
   <body>
-    
-    <h1>
-      Glasgow Cleanup Post Generator
-    </h1>
-    
+
+    <h1>Glasgow Cleanup Post Generator</h1>
+    <h4>(by <a href="https://www.instagram.com/daleharvey/">@daleharvey</a>)</h4>
+
     <p>
-      This is a tool (by <a href="https://www.instagram.com/daleharvey/">@daleharvey</a>) to help generate image posts to share 
-      a time and location for a cleanup. To find the coordinates for a
-      location visit <a href="https://www.openstreetmap.org/#map=16/55.8611/-4.2502">OpenStreetMap</a>, 
-      click the "Share" button on the right hand side of the screen and check "Include marker" checkbox, 
-      then place the marker over the desired location and copy the Geo Url (for example 
-      <code>geo:55.8611,-4.2502?z=16</code>). Then enter a date, time and location name. You can 
-      right click the resulting image and save to post on Instagram etc.
+      Generate post images to help organise
+      <a href="https://instagram.com/the_glasgow_cleanup/">litter picking meetups</a>.
+      Move the map so the marker is over where you want to meet and enter the
+      name + date of the meetup then click download.
     </p>
-    
+
     <form>
-      <input type="text" id="location" placeholder="geo:lng,lat" value="geo:55.8611,-4.2502?" />
+      <!--<input type="text" id="location" placeholder="geo:lng,lat" value="geo:55.8611,-4.2502?" />-->
+      <div><input type="text" id="name" placeholder="Location Description" value="Meet @ George Square" />
       <input type="date" id="date" placeholder="Date" />
-      <input type="time" id="time" placeholder="Time" />
-      <input type="text" id="name" placeholder="Location Description" value="George Square" />
+      <input type="time" id="time" placeholder="Time" /></div>
+      <button id="download">Download</button>
     </form>
-    
+
     <div id="map-wrapper">
-      <canvas id="map" width="1080" height="1080"></canvas>
+      <div id="map"></div>
+      <div id="pointer"></div>
+      <div id="location-output"></div>
+      <div id="time-output"></div>
     </div>
+
+    <div id="fakeout"></div>
+
+    <!--<div id="map-wrapper">
+      <canvas id="map" width="1080" height="1080"></canvas>
+    </div>-->
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
