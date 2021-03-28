@@ -54,7 +54,7 @@ form {
   height: 44px;
 }
 
-#pointer, #location-output, #time-output {
+#pointer, #location-output, #time-output, #search {
   position: absolute;
   z-index: 99;
 }
@@ -81,4 +81,11 @@ form {
   color: #FFF;
   padding: .5em;
   font-weight: bold;
+}
+
+#search {
+  top: 10px;
+  left: 50px;
+  right: 50px;
+  width: 200px;
 }

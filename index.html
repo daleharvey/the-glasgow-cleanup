@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/autocompleter@6.0.5/autocomplete.css">
     <link rel="stylesheet" href="/style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/autocompleter@6.0.5/autocomplete.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -42,9 +45,8 @@
       <div id="pointer"></div>
       <div id="location-output"></div>
       <div id="time-output"></div>
+      <input type="search" id="search" placeholder="Search" />
     </div>
-
-    <div id="fakeout"></div>
 
     <!--<div id="map-wrapper">
       <canvas id="map" width="1080" height="1080"></canvas>
